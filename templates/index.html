@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Price Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+    body,h1 {font-family: "Raleway", sans-serif; color:red; font-weight: bold; }
+    body, html {height: 100% }
+    form{ color:white;}
+</style>
+<body style="background-image: url('https://images.unsplash.com/photo-1485291571150-772bcfc10da5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2900&q=80'); background-size: cover; margin-left: 5%; border:1px solid black;">
+    <div class="login">
+     <h1>Predict Car Price</h1>
+   
+       <div class="Variables">
+       <form action="{{ url_for('predict')}}"method="post">
+   
+       
+       <label>Manufactured Year</label>
+       <input type="number" name="Year" placeholder="Year" required="required" min="2000.0" max="2022.0"/>
+       <label>Kilometers Driven</label>
+       <input type="number" name="Kms_Driven" placeholder="Total Kilometers Driven" required="required" />
+   
+   
+       <label>Fuel Type</label>
+       <select id = "FuelType" name = FuelType >
+           <option value = "Diesel">Diesel</option>
+           <option value = "Petrol">Petrol</option>
+           <option value = "CNG">CNG</option>
+           <option value = "LPG">LPG</option>
+           <option value = "Electric">Electric</option>
+       </select>
+       
+       <label>Mileage</label>
+       <input type="number" name="Mileage" placeholder="Mileage" required="required" step="1" min="0.0" max="120.0"/>
+       
+       <br>
+       <br>
+       <label>Transmission</label>
+       <select id = "Transmission" name = Transmission>
+       <option value = "Manual">Manual</option>
+       <option value = "Automatic">Automatic</option>
+       </select>
+   
+       <label>Seller Type</label>
+       <select id = "SellerType" name="SellerType">
+       <option value = "Dealer">Dealer</option>
+       <option value = "Individual">Individual</option>
+       <option value = "Trustmark Dealer">TrustmarkDealer</option>
+       </select>
+   
+       <label>Engine</label>
+       <input type="number" name="Engine" placeholder="Engine" required="required" step="1" min="0.0" max="6000.0"/>
+       
+       <label>Seats</label>
+       <input type="number" name="Seats" placeholder="Seats" required="required" step="1" min="2" max="14"/>
+
+   </div>
+       <br>
+      <br>
+       <div>
+       <button type="submit" class="btn btn-primary btn-block btn-large">Predict The Price</button>
+       </div>
+   
+       </form>
+   
+      <br>
+      <br>
+      {{ prediction_text }}
+   
+    </div>
+   
+   
+   </body>
+
+
+
+<!-- 
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style> -->
+</body>
+
+</html>
